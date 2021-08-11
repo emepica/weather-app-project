@@ -1,0 +1,114 @@
+body {
+  margin: 20px;
+  background-color: #f6effa;
+  color: #96928f;
+  font-family: "Poppins", sans-serif;
+}
+form,
+section {
+  margin: 40px 20px 20px 40px;
+}
+header {
+  margin: 0px 40px;
+}
+h1,
+h2,
+h3,
+.country {
+  font-family: "DM Sans", sans-serif;
+  max-width: 100%;
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: -20px;
+  font-weight: 700;
+  font-size: 70px;
+  color: black;
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.country {
+  font-weight: 200;
+  font-size: 24px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 30%;
+}
+.day {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+}
+section.forecast {
+  text-align: center;
+}
+.temperature {
+  font-size: 24px;
+}
+.current {
+  font-size: 70px;
+  font-weight: bold;
+  color: thistle;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.units {
+  font-size: 28px;
+  font-weight: 500;
+}
+p.info {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+ul {
+  padding-left: 0;
+}
+.recent-search {
+  text-align: left;
+  margin: 50px 20px 20px;
+}
+.recent-cities {
+  text-decoration: underline;
+  transition: ease-in-out 200ms;
+  cursor: pointer;
+}
+.recent-cities:hover {
+  color: blueviolet;
+}
+
+.btn-outline-secondary:hover {
+  background-color: thistle;
+  border-color: rgb(179, 150, 179);
+}
+#button-current-location-submit {
+  background-color: #f6effa;
+}
+#button-current-location-submit:hover {
+  background-color: thistle;
+  border-color: rgb(179, 150, 179);
+}
+.credits {
+  text-align: right;
+  font-size: xx-small;
+}
+a {
+  color: thistle;
+  text-decoration: none;
+}
+a:hover {
+  color: blueviolet;
+}
