@@ -3,6 +3,8 @@
 function updateInfo(response) {
   function displayFarenheit(event) {
     event.preventDefault();
+    linkCelcius.classList.remove("active");
+    linkFarenheit.classList.add("active");
     let currentTemperature = document.querySelector("#current-temperature");
     let farenheitTemperature = Math.round(
       (response.data.main.temp * 9) / 5 + 32
@@ -12,10 +14,18 @@ function updateInfo(response) {
 
   function displayCelcius(event) {
     event.preventDefault();
+    linkFarenheit.classList.remove("active");
+    linkCelcius.classList.add("active");
     let currentTemperature = document.querySelector("#current-temperature");
     let celciusTemperature = Math.round(response.data.main.temp);
     currentTemperature.innerHTML = `${celciusTemperature}`;
   }
+
+  let linkFarenheit = document.querySelector("#unit-farenheit");
+  linkFarenheit.addEventListener("click", displayFarenheit);
+  let linkCelcius = document.querySelector("#unit-celcius");
+  linkCelcius.addEventListener("click", displayCelcius);
+
   document.querySelector("h1").innerHTML = `${response.data.name}`;
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -41,11 +51,6 @@ function updateInfo(response) {
     response.data.weather[0].description;
   document.querySelector("#current-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#current-icon").setAttribute("alt", `${response.data.weather[0].description}`);
-
-  let linkFarenheit = document.querySelector("#unit-farenheit");
-  linkFarenheit.addEventListener("click", displayFarenheit);
-  let linkCelcius = document.querySelector("#unit-celcius");
-  linkCelcius.addEventListener("click", displayCelcius);
 
  let sunriseTime = new Date ((response.data.sys.sunrise*1000+(timeOffset))+(response.data.timezone*1000));
  let sunsetTime= new Date ((response.data.sys.sunset*1000+(timeOffset))+(response.data.timezone*1000));

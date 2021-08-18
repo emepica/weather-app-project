@@ -143,11 +143,19 @@ textarea:focus {
   font-size: xx-small;
 }
 a {
-  color: thistle;
+  color: rgb(136, 77, 170);
   text-decoration: none;
 }
 a:hover {
-  color: blueviolet;
+  color: rgb(159, 43, 226);
+  text-decoration: none;
+}
+.active{
+  color: thistle;
+}
+.active:hover{
+color: thistle;
+cursor: default;
 }
 .sourceCode {
   margin-top: 20px;
