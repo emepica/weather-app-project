@@ -33,61 +33,58 @@
     <div class="container">
       <div class="card shadow">
         <form>
-          <div class="row">
-            <div class="col-9">
-              <div class="input-group mt-20 mb-3 shadow-sm">
+            
+              <div >
                 <input
                   type="text"
-                  class="form-control"
+                  class="input-form mt-20 mb-3 shadow-sm search-bar"
                   placeholder="Type a city"
                   id="city-text-input"
                   aria-label="Type a city"
-                  aria-describedby="button-addon2"
+                  autocomplete="off"
+                  autofocus="off"
                 />
                 <button
                   type="submit"
-                  class="btn btn-outline-secondary"
+                  class="btn btn-outline-secondary mt-20 mb-3 shadow-sm search-bar"
                   type="button"
                   id="button-search-submit"
                 >
                   Search
                 </button>
-              </div>
-            </div>
-            <div class="col-3 right">
+              
               <button
                 type="submit"
-                class="btn btn-outline-secondary"
+                class="btn btn-outline-secondary mt-20 mb-3 shadow-sm search-bar right"
                 type="button"
                 id="button-current-location-submit"
               >
                 Current Location
               </button>
-            </div>
           </div>
         </form>
 
         <header>
-          <h1>Brussels</h1>
-          <div class="country" id="country">Belgium</div>
-
+          <h1>Brussels</h1>          
+          <span class="country" id="country">Belgium </span>
           <div class="today row">
-            <div class="col-7">
+            <div class="col-6">
               <div class="info">
                 <div class="info row">
                   <div class="col-4">
                     <p class="info" id="current-date">Sunday 10:10</p>
-                    <p><span id="weather-description">Sunny</span></p>
+                    <p><span id="weather-overall-description">Sunny</span></p>
+                    <p><span id="weather-description">clear sky</span> <br>
+                    <span>Feels like <span id="weather-feels-like">11</span>°C</span></p>
                   </div>
                   <div class="col-8">
                     <div class="current icon">
-                      <img src="img/svg/021-sun.svg" class="left" alt="sun" />
+                      <img src="img/svg/021-sun.svg" alt="sun" />
                       <span class="current temperature right">
                         <span id="current-temperature">20</span>
                         <span class="units right">
                           <a href="#" id="unit-celcius">°C</a> |
-                          <a href="#" id="unit-farenheit">°F</a></span
-                        >
+                          <a href="#" id="unit-farenheit">°F</a></span>
                       </span>
                     </div>
                   </div>
@@ -95,8 +92,8 @@
               </div>
             </div>
             <div class="col-1"></div>
-            <div class="col-4">
-              <h2>About today</h2>
+            <div class="col-2">
+              
               <ul id="current-info">
                 <li>
                   <span id="current-min-temp">15</span> °c/
@@ -105,6 +102,10 @@
                 <li>Humidity <span id="current-humidity">15</span>%</li>
                 <li>Wind <span id="current-wind-speed">15</span> km/h</li>
               </ul>
+              
+            </div>
+            <div class="col-3">
+              <h2><img src="img/svg/021-sunrise.svg" class="sun-icon" alt="sunrise" /> <span id = "sunrise-time"> 07:00 </span> <br> <img src="img/svg/021-sunset.svg" class="sun-icon" alt="sunset" width="10px" />  <span id = "sunset-time"> 21:00 </span></h2>
             </div>
           </div>
         </header>

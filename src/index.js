@@ -33,13 +33,22 @@ function updateInfo(response) {
   document.querySelector("#current-wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#weather-overall-description").innerHTML =
+  response.data.weather[0].main;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
-
+  
   let linkFarenheit = document.querySelector("#unit-farenheit");
   linkFarenheit.addEventListener("click", displayFarenheit);
   let linkCelcius = document.querySelector("#unit-celcius");
   linkCelcius.addEventListener("click", displayCelcius);
+  let sunriseTime= response.data.sys.sunrise*1000;
+ sunriseTime = new Date (sunriseTime);
+ let sunsetTime= response.data.sys.sunset*1000;
+ sunsetTime = new Date (sunsetTime);
+ document.querySelector("#sunrise-time").innerHTML = sunriseTime.toLocaleTimeString();
+  document.querySelector("#sunset-time").innerHTML = sunsetTime.toLocaleTimeString();
+
 }
 
 function retrievePosition(position) {
@@ -60,6 +69,7 @@ function searchCity(city) {
   if (city) {
     let apiKey = `7f10d25441a1a7ff7317938abc53019d`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    console.log(apiUrl);
     axios.get(apiUrl).then(updateInfo);
   } else {
     alert(`Please enter a city`);

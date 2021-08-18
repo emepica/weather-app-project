@@ -1,3 +1,6 @@
+.card{
+  margin: auto;
+}
 body {
   margin: 20px;
   background-color: #f6effa;
@@ -17,19 +20,20 @@ h3,
 .country {
   font-family: "DM Sans", sans-serif;
   max-width: 100%;
+  display:inline;
 }
 h1 {
   margin-top: 0;
-  margin-bottom: -20px;
   font-weight: 700;
-  font-size: 70px;
+  font-size: 60px;
   color: black;
 }
 h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 20px;
 }
-
+.sun-icon{
+  max-width: 20%;
+}
 .country {
   font-weight: 200;
   font-size: 24px;
@@ -89,6 +93,28 @@ ul {
 .recent-cities:hover {
   color: blueviolet;
 }
+.search-bar {
+  border-radius: 4px;
+  border-width: 1px;
+  margin-right: 10px ;
+  border-color: rgb(179, 150, 179);
+}
+.input-form{
+  padding-top: 0.375rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
+    vertical-align: middle;
+}
+input:focus { 
+  outline-color: #719ECE;
+
+  box-shadow: 10px #719ECE;
+}
+textarea:focus { 
+  border-color: #719ECE;
+  box-shadow: 10px #719ECE;
+}
 
 .btn-outline-secondary:hover {
   background-color: thistle;
@@ -116,3 +142,4 @@ a:hover {
   margin-top: 20px;
   text-align: center;
 }
+
