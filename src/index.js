@@ -19,7 +19,7 @@ function updateInfo(response) {
   document.querySelector("h1").innerHTML = `${response.data.name}`;
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
-  );
+);
   document.querySelector("#weather-feels-like").innerHTML = Math.round(
     response.data.main.feels_like);
   document.querySelector("#country").innerHTML = response.data.sys.country;
@@ -48,11 +48,11 @@ function updateInfo(response) {
   linkCelcius.addEventListener("click", displayCelcius);
 
  let sunriseTime = new Date ((response.data.sys.sunrise*1000+(timeOffset))+(response.data.timezone*1000));
- let sunsetTime= ((response.data.sys.sunset*1000+(timeOffset))+(response.data.timezone*1000));
- sunsetTime = new Date (sunsetTime);
+ let sunsetTime= new Date ((response.data.sys.sunset*1000+(timeOffset))+(response.data.timezone*1000));
  document.querySelector("#sunrise-time").innerHTML = sunriseTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
   document.querySelector("#sunset-time").innerHTML = sunsetTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-
+let cityTime =new Date(time+timeOffset+(response.data.timezone*1000))
+document.querySelector("#locale-date").innerHTML = `${day} ${cityTime.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}`;
 }
 
 function retrievePosition(position) {
