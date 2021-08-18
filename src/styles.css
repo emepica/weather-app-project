@@ -48,9 +48,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-img {
-  width: 20%;
-}
 .day {
   display: block;
   margin: 0 auto;
@@ -90,7 +87,8 @@ li {
   list-style: none;
 }
 ul {
-  padding-left: 0;
+  padding: 20px;
+  
 }
 .recent-search {
   text-align: left;
@@ -160,5 +158,15 @@ cursor: default;
 .sourceCode {
   margin-top: 20px;
   text-align: center;
+}
+.icon{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.forecast-temperatures{
+  font-size: 20px;
+}
+.forecast-temperature-min{
+  opacity: 0.5;
 }
 
