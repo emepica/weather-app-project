@@ -39,7 +39,9 @@ function updateInfo(response) {
   response.data.weather[0].main;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
-  
+  document.querySelector("#current-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#current-icon").setAttribute("alt", `${response.data.weather[0].description}`);
+
   let linkFarenheit = document.querySelector("#unit-farenheit");
   linkFarenheit.addEventListener("click", displayFarenheit);
   let linkCelcius = document.querySelector("#unit-celcius");

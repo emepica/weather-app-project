@@ -42,7 +42,7 @@ h2 {
 }
 
 img {
-  width: 30%;
+  width: 40%;
 }
 .day {
   display: block;
@@ -59,6 +59,10 @@ section.forecast {
   font-size: 70px;
   font-weight: bold;
   color: thistle;
+}
+img {
+  display: inline-block;
+  margin: 0 auto ;
 }
 .left {
   float: left;
