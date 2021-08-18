@@ -23,13 +23,20 @@ h3,
   display:inline;
 }
 h1 {
-  margin-top: 0;
   font-weight: 700;
   font-size: 60px;
   color: black;
 }
 h2 {
   font-size: 20px;
+}
+.locationResult{
+  margin-bottom: 20px;
+}
+.updateInfo{
+  font-size: small;
+  float:right;
+  text-align: right;
 }
 .sun-icon{
   max-width: 20%;

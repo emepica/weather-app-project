@@ -50,8 +50,8 @@ function updateInfo(response) {
  let sunriseTime = new Date ((response.data.sys.sunrise*1000+(timeOffset))+(response.data.timezone*1000));
  let sunsetTime= ((response.data.sys.sunset*1000+(timeOffset))+(response.data.timezone*1000));
  sunsetTime = new Date (sunsetTime);
- document.querySelector("#sunrise-time").innerHTML = sunriseTime.toLocaleTimeString();
-  document.querySelector("#sunset-time").innerHTML = sunsetTime.toLocaleTimeString();
+ document.querySelector("#sunrise-time").innerHTML = sunriseTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+  document.querySelector("#sunset-time").innerHTML = sunsetTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
 }
 
@@ -109,9 +109,13 @@ if (hour < 10) {
 }
 let time = now.getTime();
 let timeOffset = now.getTimezoneOffset()*60000;
-console.log(Date(time));
+  
 console.log(Date(timeOffset));
-console.log(Date(time + timeOffset));
+let currentTime = Date(time + timeOffset);
+console.log(currentTime);
+console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
+//console.log(currentTime.toLocaleTimeString([],{timeZoneName: 'short' }));
+
 
 
 //Generic degrees conversion C to F
@@ -139,10 +143,14 @@ linkCelcius.addEventListener("click", displayCelcius);
 let citySubmit = document.querySelector("#button-search-submit");
 citySubmit.addEventListener("click", submit);
 
-//Current city - trigger
-
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${day} ${hour}:${minute}`;
+
+let currentTimezone = document.querySelector("#current-timezone");
+currentTimezone.innerHTML = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+let localeDate = document.querySelector("#locale-date");
+localeDate.innerHTML = `${day} ${hour}:${minute}`;
 
 //current location - button
 
