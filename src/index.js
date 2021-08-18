@@ -20,6 +20,8 @@ function updateInfo(response) {
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#weather-feels-like").innerHTML = Math.round(
+    response.data.main.feels_like);
   document.querySelector("#country").innerHTML = response.data.sys.country;
   document.querySelector("#current-min-temp").innerHTML = Math.round(
     response.data.main.temp_min
