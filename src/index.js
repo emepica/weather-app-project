@@ -46,9 +46,9 @@ function updateInfo(response) {
   linkFarenheit.addEventListener("click", displayFarenheit);
   let linkCelcius = document.querySelector("#unit-celcius");
   linkCelcius.addEventListener("click", displayCelcius);
-  let sunriseTime= response.data.sys.sunrise*1000;
- sunriseTime = new Date (sunriseTime);
- let sunsetTime= response.data.sys.sunset*1000;
+
+ let sunriseTime = new Date ((response.data.sys.sunrise*1000+(timeOffset))+(response.data.timezone*1000));
+ let sunsetTime= ((response.data.sys.sunset*1000+(timeOffset))+(response.data.timezone*1000));
  sunsetTime = new Date (sunsetTime);
  document.querySelector("#sunrise-time").innerHTML = sunriseTime.toLocaleTimeString();
   document.querySelector("#sunset-time").innerHTML = sunsetTime.toLocaleTimeString();
@@ -107,6 +107,12 @@ let hour = now.getHours();
 if (hour < 10) {
   hour = `0${hour}`;
 }
+let time = now.getTime();
+let timeOffset = now.getTimezoneOffset()*60000;
+console.log(Date(time));
+console.log(Date(timeOffset));
+console.log(Date(time + timeOffset));
+
 
 //Generic degrees conversion C to F
 
