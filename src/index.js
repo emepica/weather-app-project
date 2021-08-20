@@ -33,7 +33,6 @@ let lat = coordinates.lat;
 let lon = coordinates.lon;
 let apiKey = `7f10d25441a1a7ff7317938abc53019d`;
 let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-console.log(apiUrl);
 axios.get(apiUrl).then(displayForecast);
 };
 
@@ -80,7 +79,6 @@ function updateInfo(response) {
   document.querySelector("#sunset-time").innerHTML = sunsetTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
   let cityTime =new Date(time+timeOffset+(response.data.timezone*1000))
-  console.log(cityTime);
   document.querySelector("#locale-date").innerHTML = `${cityTime.toLocaleString("en-US", { weekday : 'long'})}, ${cityTime.toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}`;
 
   getForecast(response.data.coord);
@@ -94,17 +92,14 @@ function retrievePosition(position) {
   axios.get(apiUrl).then(updateInfo);
 }
 
-// Current location
 function askLocation(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
-//Search city
 function searchCity(city) {
   if (city) {
     let apiKey = `7f10d25441a1a7ff7317938abc53019d`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    console.log(apiUrl);
     axios.get(apiUrl).then(updateInfo);
   } else {
     alert(`Please enter a city`);
@@ -116,8 +111,6 @@ function submit(event) {
   let city = document.querySelector("#city-text-input").value;
   searchCity(city);
 }
-
-//Parameters
 
 let now = new Date();
 let days = [
@@ -140,16 +133,7 @@ if (hour < 10) {
 }
 let time = now.getTime();
 let timeOffset = now.getTimezoneOffset()*60000;
-  
-console.log(Date(timeOffset));
 let currentTime = Date(time + timeOffset);
-console.log(currentTime);
-console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
-//console.log(currentTime.toLocaleTimeString([],{timeZoneName: 'short' }));
-
-
-
-//Generic degrees conversion C to F
 
 function displayFarenheit(event) {
   event.preventDefault();
@@ -169,8 +153,6 @@ function displayCelcius(event) {
 let linkCelcius = document.querySelector("#unit-celcius");
 linkCelcius.addEventListener("click", displayCelcius);
 
-//Update city - action
-
 let citySubmit = document.querySelector("#button-search-submit");
 citySubmit.addEventListener("click", submit);
 
@@ -179,8 +161,6 @@ currentDate.innerHTML = `${day} ${hour}:${minute}`;
 
 let currentTimezone = document.querySelector("#current-timezone");
 currentTimezone.innerHTML = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-//current location - button
 
 let currentLocation = document.querySelector("#button-current-location-submit");
 currentLocation.addEventListener("click", askLocation);
