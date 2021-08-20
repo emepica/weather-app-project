@@ -93,16 +93,19 @@ ul {
   padding: 20px;
   
 }
-.recent-search {
+ul #other-cities li{
+  display: inline;
+}
+.other-search {
   text-align: left;
   margin: 50px 20px 20px;
 }
-.recent-cities {
+.other-cities {
   text-decoration: underline;
   transition: ease-in-out 200ms;
   cursor: pointer;
 }
-.recent-cities:hover {
+.other-cities:hover {
   color: blueviolet;
 }
 .search-bar {
