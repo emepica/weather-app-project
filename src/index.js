@@ -80,7 +80,8 @@ function updateInfo(response) {
   document.querySelector("#sunset-time").innerHTML = sunsetTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
   let cityTime =new Date(time+timeOffset+(response.data.timezone*1000))
-  document.querySelector("#locale-date").innerHTML = `${day} ${cityTime.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}`;
+  console.log(cityTime);
+  document.querySelector("#locale-date").innerHTML = `${cityTime.toLocaleString("en-US", { weekday : 'long'})}, ${cityTime.toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}`;
 
   getForecast(response.data.coord);
 }
@@ -178,9 +179,6 @@ currentDate.innerHTML = `${day} ${hour}:${minute}`;
 
 let currentTimezone = document.querySelector("#current-timezone");
 currentTimezone.innerHTML = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-let localeDate = document.querySelector("#locale-date");
-localeDate.innerHTML = `${day} ${hour}:${minute}`;
 
 //current location - button
 
