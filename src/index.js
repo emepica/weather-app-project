@@ -68,6 +68,29 @@ function retrievePosition(position) {
   axios.get(apiUrl).then(updateInfo);
 }
 
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML=`<div class="row">`;
+
+  let days =["Mon","Tue","Wed","Thu","Fri"];
+
+  days.forEach(function(day){
+    forecastHTML=forecastHTML+`
+    <div class="col-2">
+      <h3>${day}</h3>
+      <img src="img/svg/021-sun.svg" alt="sun" width="50px" class="day icon"/>
+      <div class="forecast-temperatures"> <span class="forecast-temperature-max">20°</span> <span class="forecast-temperature-min">15°</span></div>
+    </div>`;
+    });
+
+  forecastHTML=forecastHTML+`</div>`;
+
+  forecastElement.innerHTML=forecastHTML;
+};
+displayForecast();
+
+
 // Current location
 function askLocation(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
