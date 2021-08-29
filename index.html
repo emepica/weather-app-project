@@ -65,22 +65,32 @@
         </form>
 
         <header>
-          <div class = "locationResult">
-          <h1>Brussels</h1>          
-          <span class="country" id="country">Belgium </span>
-          <span class="updateInfo"> Last updated: <span id="current-date">Sunday 10:10</span> <br> Current timezone : <span id="current-timezone">Brussels</span></span>
-          <p class="info" id="locale-date"> Sunday 10:10 </p>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 ">
+              <div class = "locationResult">
+              <h1>Brussels</h1>          
+              <span class="country" id="country">Belgium </span>
+              <p class="info" id="locale-date"> Sunday 10:10 </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <span class="updateInfo"> Last updated: <span id="current-date">Sunday 10:10</span> <br> Current timezone : <span id="current-timezone">Brussels</span></span>
+            </div>
+          </div>
         </div>
+
+        <div class="container">
           <div class="today row">
-            <div class="col-7">
+            <div class="col-md-7">
               <div class="info">
                 <div class="info row">
-                  <div class="col-4">
+                  <div class="col-md-4">
                     <p><span id="weather-overall-description">Sunny</span></p>
                     <p><span id="weather-description">clear sky</span> <br>
                     <span>Feels like <span id="weather-feels-like">11</span>°C</span></p>
                   </div>
-                  <div class="col-8">
+                  <div class="col-md-8">
                     <div class="current icon">
                       <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="sun" id="current-icon" width="100px"/>
                       <span class="current temperature right">
@@ -94,7 +104,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-2">
+            <div class="col-md-3">
               <ul id="current-info">
                 <li>
                   <span id="current-min-temp">15</span> °c/
@@ -104,10 +114,12 @@
                 <li>Wind <span id="current-wind-speed">15</span> km/h</li>
               </ul>
             </div>
-            <div class="col-3">
+            <div class="col-md-2">
               <h2><img src="img/svg/021-sunrise.svg" class="sun-icon" alt="sunrise" /> <span id = "sunrise-time"> 07:00 </span> <br> <img src="img/svg/021-sunset.svg" class="sun-icon" alt="sunset" />  <span id = "sunset-time"> 21:00 </span></h2>
             </div>
           </div>
+        </div>
+
         </header>
         <section>
           <div id="forecast">
