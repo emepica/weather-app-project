@@ -175,4 +175,30 @@ cursor: default;
 .forecast-temperature-min{
   opacity: 0.5;
 }
-
+@media(max-width: 800px){
+  body{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  form, header{
+    margin: 10px;
+  }
+  .container{
+    padding:0px;
+  }
+  h1{
+    font-size: 34px;
+  }
+  .country{
+    font-size: 14px;
+  }
+  .updateInfo{
+    display:none;
+  }
+  p,#sunset-time, #sunrise-time, #current-info{
+    font-size: 14px;
+  }
+ span{
+    margin-right: 10px;
+  }
+}

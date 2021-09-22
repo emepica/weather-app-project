@@ -18,7 +18,7 @@ function displayForecast(response){
       <div class="col-md-2 mb-5">
         <h2>${formatDate(forecastDay.dt)}</h2>
         <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt=${forecastDay.weather[0].main} width="50px" class="day icon"/>
-        <div class="forecast-temperatures"> <span class="forecast-temperature-max">${Math.round(forecastDay.temp.max)}°</span> <span class="forecast-temperature-min">${Math.round(forecastDay.temp.min)}°</span></div>
+        <div class="forecast-temperatures"> <span class="forecast-temperature-max">${Math.round(forecastDay.temp.max)}° </span> <span class="forecast-temperature-min"> ${Math.round(forecastDay.temp.min)}°</span></div>
       </div>`;
       }
     });
